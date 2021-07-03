@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import Recipe  from './components/Recipe';
 import { fetchRecipes, recipesSelector } from './slices/recipes'
 
 const App = () => {
@@ -19,10 +19,7 @@ const App = () => {
     if (hasErrors) return <p>Cannot display recipes...</p>
 
     return recipes.map(recipe =>
-      <div key={recipe.idMeal} className='tile'>
-        <h2>{recipe.strMeal}</h2>
-        <img src={recipe.strMealThumb} alt='' />
-      </div>
+      <Recipe  key={recipe.idMeal} recipe = {recipe} />
     )
   }
 
