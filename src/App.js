@@ -19,7 +19,7 @@ const App = () => {
     if (hasErrors) return <p>Cannot display recipes...</p>
 
     return recipes.map(recipe =>
-      <Recipe  key={recipe.idMeal} recipe = {recipe} />
+      <Recipe  key={recipe.idMeal} opacity= {.9} color="grey" recipe = {recipe} />
     )
   }
 
